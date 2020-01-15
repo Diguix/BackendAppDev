@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const PointSchema = new mongoose.Schema({
-    tye: {
+    type: {
         type: String,
         enum: ['Point'],
         required: true
