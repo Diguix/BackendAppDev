@@ -6,6 +6,7 @@ const routes = require('./routes');
 const bodyParser = require('body-parser');
 const dev = require('./controllers/DevController');
 const search = require('./controllers/SearchController');
+const cors = require('cors');
 
 const app = express();
 
@@ -37,6 +38,9 @@ mongoose
 // App
 app.use(express.json()); // para que o express() entenda as requisições no formato json
 app.use(express.urlencoded({ extended: true })); // permite lidar com requisicoes no padrao urlenconded
+
+//
+app.use(cors());
 
 // app.use('/', dev, search);
 app.use(routes);
